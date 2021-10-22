@@ -1,4 +1,10 @@
 @startuml
-class main {
+class ToDoItem {
+}
+
+class ToDoList {
+}
+
+class Application {
 }
 @enduml
