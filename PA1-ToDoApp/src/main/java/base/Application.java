@@ -11,11 +11,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.TreeMap;
-
 
 public class Application extends javafx.application.Application {
 
@@ -44,6 +41,24 @@ public class Application extends javafx.application.Application {
     //SortingTree is a phony company, any likeness or use of name from existing company or organization is a coincidence
     //(In regard to the PNG image) Protected by fair use laws. Intended use is for educational purposes.
     //          Original image has been altered using image editing software
+}
+
+class mainWindowController {
+    @FXML
+    private MenuItem SaveMenuBtn;
+
+    @FXML
+    private void saveList(){
+        //Open save window
+    }
+
+    @FXML
+    private MenuItem UploadMenuBtn;
+
+    @FXML
+    private void uploadList(){
+        //Open upload window
+    }
 
     @FXML
     private Label dateText;
@@ -82,7 +97,7 @@ public class Application extends javafx.application.Application {
 
     @FXML
     private void setItemNameText(){
-        //Set the label's text as the name of from the to-do item's information package
+        //Set the label's text to the name of the item
     }
 
     @FXML
@@ -93,6 +108,7 @@ public class Application extends javafx.application.Application {
         //Open prompt window
     }
 
+    //Display complete and incomplete based on boolean "show values"
     @FXML
     private ComboBox<?> listOfItemsDropdown;
 
@@ -148,23 +164,34 @@ public class Application extends javafx.application.Application {
     private void useListOfListRmvBtn(){
         //Remove array list
     }
+}
+
+class ListPrompt_ADD_Controller {
+    @FXML
+    private TextField listNameBox_ADD;
 
     @FXML
-    private TextField ListNameBox;
-
-    @FXML
-    private Button ListNameOkBtn;
+    private Button listNameOkBtn_ADD;
 
     @FXML
     private void createList(){
         //On "ok" button press, retrieve string from listNameBox
         String nameEntry;
+        //If string is less than 3 characters append "list" onto string
         //Create new ToDoList
         ToDoList list = new ToDoList();
         //Set list name
         //Add list to arraylist of lists
         //Close window
     }
+}
+
+class ListPrompt_EDIT_Controller {
+    @FXML
+    private TextField listNameBox_EDIT;
+
+    @FXML
+    private Button listNameOkBtn_EDIT;
 
     @FXML
     private void editListName(ToDoList listEntry){
@@ -173,18 +200,23 @@ public class Application extends javafx.application.Application {
         //Change value of entry name to retrieved string
         //Close window
     }
+}
+
+class ItemPrompt_ADD_Controller {
+    @FXML
+    private TextField itemDateTextBoxD_ADD;
 
     @FXML
-    private TextField itemDateTextBox;
+    private TextField itemDateTextBoxM_ADD;
 
     @FXML
-    private TextField itemDetailsTextBox;
+    private TextField itemDateTextBoxY_ADD;
 
     @FXML
-    private CheckBox itemIsCompleteBox;
+    private TextField itemDetailsTextBox_ADD;
 
     @FXML
-    private TextField itemNameTextBox;
+    private TextField itemNameTextBox_ADD;
 
     @FXML
     private void createItem(ToDoList listEntry){
@@ -197,6 +229,26 @@ public class Application extends javafx.application.Application {
         //Add item to arraylist of items in to do list
         //Close window
     }
+}
+
+class ItemPrompt_EDIT_Controller {
+    @FXML
+    private CheckBox IsCompleteBtn;
+
+    @FXML
+    private TextField itemDateTextBoxD_EDIT;
+
+    @FXML
+    private TextField itemDateTextBoxM_EDIT;
+
+    @FXML
+    private TextField itemDateTextBoxY_EDIT;
+
+    @FXML
+    private TextField itemDetailsTextBox_EDIT;
+
+    @FXML
+    private TextField itemNameTextBox_EDIT;
 
     @FXML
     private void editItem(ToDoList listEntry, ToDoItem itemEntry){
@@ -205,6 +257,61 @@ public class Application extends javafx.application.Application {
         String dateEntry;
         String detailEntry;
         //Change values of itemEntry
+        //If isComplete is selected update boolean value
+        //Close window
+    }
+}
+
+class SavePromptController {
+    @FXML
+    private ComboBox<?> saveList;
+
+    @FXML
+    private TextField savePath;
+
+    @FXML
+    private TextField fileNameText;
+
+    @FXML
+    private Button fileSaveOkBtn;
+
+    @FXML
+    private void saveList(){
+        //On ok button press
+        //Save string from file name text box
+        String fileName;
+        //Save string from file path text box
+        String filePath;
+        //Create file
+        //Set output to file
+        //Save number of lists
+        //For every list
+            //Save list name
+            //Save number of items
+            //For every item
+                //Save item name
+                //Save due date
+                //Save details
+                //Save completion status
+        //Close window
+    }
+}
+
+class UploadPromptController {
+    @FXML
+    private TextField uploadPath;
+
+    @FXML
+    private Button fileUploadOkBtn;
+
+    @FXML
+    private void uploadList(){
+        //For the number of lists
+            //Save list name
+            //Create arraylist of arraylist entry
+                //For the number of items
+                //Save item assets
+                //Create an arraylist entry
         //Close window
     }
 }

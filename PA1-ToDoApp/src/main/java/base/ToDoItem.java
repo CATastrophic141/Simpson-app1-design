@@ -6,6 +6,7 @@ class ToDoItem {
     private String itemName;
     private String itemDueDate;
     private String itemDetails;
+    boolean isCompleteStatus;
 
     public ToDoItem(String name, String date, String details) {
         //Set instance details to passed arguments
@@ -36,6 +37,10 @@ class ToDoItem {
     public String getItemDetails(){
         //Get item name
         return itemDetails;
+    }
+
+    public void setCompleteStatus(){
+        //Set item complete status to true
     }
 }
 

@@ -1,10 +1,81 @@
 @startuml
 class ToDoItem {
+- String itemName
+- String itemDueDate
+- String itemDetails
+--
++ ToDoItem(String name, String date, String details)
+..
+Setter methods
++ void setItemName(String name)
++ void setDueDate(String date)
++ void setDetails(String details)
+..
+Getter methods
++ String getItemName()
++ String getDueDate()
++ String getItemDetails()
 }
+ToDoList *-- ToDoItem
 
 class ToDoList {
+- String listName
+# ArrayList<ToDoItem> itemList
+--
++ void setListName(String name)
+..
++ String getListName()
 }
+Application -- ToDoList
 
 class Application {
+# ArrayList<ToDoList> listList
+# boolean showCompleted
+# boolean showIncomplete
+--
+Launching methods
++ void start(Stage stage)
++ static void main(String[] args)
+--
+@FXML items
+    - Label dateText
+    - Label detailText
+    - CheckBox hideCompletedBtn
+    - CheckBox hideIncompleteBtn
+    - Label itemNameText
+    - Button listOfItemsAddBtn
+    - ComboBox<?> listOfItemsDropdown
+    - Button listOfItemsEditBt
+    - Button listOfListAddBtn
+    - ComboBox<?> listOfListDropdown
+    - Button listOfListEditBtn
+    - Button listOfListRmvBtn
+    - TextField ListNameBox
+    - private Button ListNameOkBtn
+    - private TextField itemDateTextBoxD
+    - private TextField itemDateTextBoxM
+    - private TextField itemDateTextBoxY
+    - private TextField itemDetailsTextBox
+    - private CheckBox itemIsCompleteBox
+    - TextField itemNameTextBox
+--
+@FXML actions
+    - void setDateText()
+    - void setDetailText()
+    - void setHideCompletedBtn()
+    - void setHideIncompleteBtnBtn()
+    - void setItemNameText()
+    - void useListOfItemsAddBtn()
+    - void selectFromListOfItemsDropdown()
+    - void useListOfItemsEditBtn()
+    - void uselistOfItemsRmvBtn()
+    - void uselistOfListAddBtn()
+    - void selectFromListOfListDropdown()
+    - void useListOfListEditBtn()
+    - void useListOfListRmvBtn()
+    - void createList()
+    - void editListName(ToDoList listEntry)
+    - void createItem(ToDoList listEntry)
+    - void editItem(ToDoList listEntry, ToDoItem itemEntry)
 }
 @enduml
