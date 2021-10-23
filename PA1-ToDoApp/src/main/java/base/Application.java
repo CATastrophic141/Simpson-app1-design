@@ -110,11 +110,11 @@ class mainWindowController {
 
     //Display complete and incomplete based on boolean "show values"
     @FXML
-    private ComboBox<?> listOfItemsDropdown;
+    private ListView<?> listOfListsList;
 
     @FXML
-    private void selectFromListOfItemsDropdown(){
-        //Get data from the selected item in the dropdown menu
+    private void selectFromListOfItems(){
+        //Get data from the selected item in list
     }
 
     @FXML
@@ -142,11 +142,11 @@ class mainWindowController {
     }
 
     @FXML
-    private ComboBox<?> listOfListDropdown;
+    private ListView<?> listOfItemsList;
 
     @FXML
-    private void selectFromListOfListDropdown(){
-        //Get data from the selected item in the dropdown menu
+    private void selectFromListOfList(){
+        //Get data from the selected item in the list
     }
 
     @FXML
