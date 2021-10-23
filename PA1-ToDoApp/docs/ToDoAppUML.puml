@@ -1,47 +1,47 @@
 @startuml
 class ToDoItem {
-- String itemName
-- String itemDueDate
-- String itemDetails
+  - String itemName
+  - String itemDueDate
+  - String itemDetails
 --
-+ ToDoItem(String name, String date, String details)
+  + ToDoItem(String name, String date, String details)
 ..
 Setter methods
-+ void setItemName(String name)
-+ void setDueDate(String date)
-+ void setDetails(String details)
+  + void setItemName(String name)
+  + void setDueDate(String date)
+  + void setDetails(String details)
 ..
 Getter methods
-+ String getItemName()
-+ String getDueDate()
-+ String getItemDetails()
+  + String getItemName()
+  + String getDueDate()
+  + String getItemDetails()
 }
 
 class ToDoList {
-- String listName
-# ArrayList<ToDoItem> itemList
+  - String listName
+  # ArrayList<ToDoItem> itemList
 --
-+ void setListName(String name)
+  + void setListName(String name)
 ..
-+ String getListName()
+  + String getListName()
 }
 ToDoList *-- ToDoItem
 Application -- ToDoList
 
 class Application {
-# ArrayList<ToDoList> listList
-# boolean showCompleted
-# boolean showIncomplete
+  # ArrayList<ToDoList> listList
+  # boolean showCompleted
+  # boolean showIncomplete
 --
 Launching methods
-+ void start(Stage stage)
-+ static void main(String[] args)
+  + void start(Stage stage)
+  + static void main(String[] args)
 }
 
-class mainWindowController {
+class MainWindowController {
     @FXML Items
-        - MenuItem SaveMenuBtn;
-        - MenuItem UploadMenuBtn;
+        - MenuItem saveBtn;
+        - MenuItem uploadBtn;
         - Label dateText;
         - Label detailText;
         - CheckBox hideCompletedBtn;
@@ -58,7 +58,7 @@ class mainWindowController {
   --
     @FXML actions
         - void saveList()
-        - void uploadList()
+        - void openUploadPrompt()
         - void setDateText()
         - void setDetailText()
         - void setHideCompletedBtn()
@@ -73,7 +73,7 @@ class mainWindowController {
         - void useListOfListEditBtn()
         - void useListOfListRmvBtn()
 }
-Application -- mainWindowController
+Application -- MainWindowController
 
 class ListPrompt_ADD_Controller {
     @FXML items

@@ -4,39 +4,28 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="base.MainWindowController">
    <children>
-      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-                  <MenuItem fx:id="SaveMenuBtn" mnemonicParsing="false" text="Save" />
-                  <MenuItem fx:id="UploadMenuBtn" mnemonicParsing="false" text="Upload" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <SplitPane dividerPositions="0.5" layoutX="200.0" layoutY="-7.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <SplitPane dividerPositions="0.5" layoutX="200.0" layoutY="-28.0" prefHeight="362.0" prefWidth="998.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="495.0">
                            <children>
                               <Button id="ListOfListRmvBtn" fx:id="listOfListRmvBtn" layoutX="400.0" layoutY="260.0" mnemonicParsing="false" text="Remove" AnchorPane.topAnchor="260.0" />
                               <Button id="ListOfListAddBtn" fx:id="listOfListAddBtn" layoutX="300.0" layoutY="260.0" mnemonicParsing="false" text="Add" AnchorPane.topAnchor="260.0" />
                               <Label layoutX="14.0" layoutY="5.0" text="To-do lists" />
                               <Button id="ListOfListEditBtn" fx:id="listOfListEditBtn" layoutX="350.0" layoutY="260.0" mnemonicParsing="false" text="Edit" AnchorPane.topAnchor="260.0" />
                               <ListView fx:id="listOfListsList" layoutX="14.0" layoutY="22.0" prefHeight="287.0" prefWidth="260.0" />
+                              <Button fx:id="saveBtn" layoutX="417.0" layoutY="22.0" mnemonicParsing="false" text="Save" />
+                              <Button fx:id="uploadBtn" layoutX="417.0" layoutY="54.0" mnemonicParsing="false" text="Upload" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -52,7 +41,8 @@
                         </AnchorPane>
                     </items>
                   </SplitPane>
-               </children></AnchorPane>
+               </children>
+            </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="998.0">
                <children>
                   <Label id="DateText" fx:id="dateText" alignment="CENTER" layoutX="14.0" layoutY="14.0" text="DATE" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="25.0" />
@@ -64,7 +54,8 @@
                      </image>
                   </ImageView>
                   <Label layoutX="527.0" layoutY="243.0" opacity="0.5" text="Powered by SortingTree" AnchorPane.bottomAnchor="0.25" AnchorPane.rightAnchor="33.0" />
-               </children></AnchorPane>
+               </children>
+            </AnchorPane>
         </items>
       </SplitPane>
    </children>
