@@ -10,11 +10,15 @@ import javafx.stage.Stage;
 
 public class MainWindowController {
 
+    /*All present active code is to allow
+     the sub-windows to be accessed in this pseudocode stage*/
+
     @FXML
     private Button saveBtn;
 
     @FXML
     private void saveList(ActionEvent event) {
+        //Open save window
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FileSavePrompt.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
