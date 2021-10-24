@@ -5,10 +5,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="base.UploadPromptController">
    <children>
-      <TextField fx:id="uploadPath" layoutX="14.0" layoutY="36.0" promptText="File Path" />
-      <Label layoutX="14.0" layoutY="14.0" text="Specify location path" />
-      <Button fx:id="fileUploadOkBtn" layoutX="163.0" layoutY="68.0" mnemonicParsing="false" text="Ok" />
+      <TextField fx:id="uploadPath" layoutX="9.0" layoutY="27.0" promptText="File Path" />
+      <Label layoutX="10.0" layoutY="7.0" text="Specify location path" />
+      <Button fx:id="fileUploadOkBtn" layoutX="157.0" layoutY="65.0" mnemonicParsing="false" text="Ok" />
    </children>
 </AnchorPane>

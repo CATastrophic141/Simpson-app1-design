@@ -5,10 +5,12 @@
 
 package base;
 
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -17,6 +19,7 @@ public class Application extends javafx.application.Application {
     //Arraylist of to do lists
             //Each list item contains an arraylist of to do items
     ArrayList<ToDoList> listList;
+    ArrayList<ToDoItem> listItem;
     boolean showCompleted;
     boolean showIncomplete;
 

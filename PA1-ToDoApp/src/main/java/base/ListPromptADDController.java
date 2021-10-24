@@ -6,10 +6,10 @@ import javafx.scene.control.TextField;
 
 public class ListPromptADDController {
     @FXML
-    private TextField listNameBoxADD;
+    private TextField listNameADDBox;
 
     @FXML
-    private Button listNameOkBtnADD;
+    private Button listNameOkADDBtn;
 
     @FXML
     private void createList(){

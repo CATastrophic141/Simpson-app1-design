@@ -1,5 +1,6 @@
 package base;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,32 +8,43 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.util.Objects;
-
 public class MainWindowController {
 
     @FXML
     private Button saveBtn;
 
     @FXML
-    private void saveList(){
-        //Open save window
+    private void saveList(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FileSavePrompt.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.setTitle("File Save");
+            stage.show();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private Button uploadBtn;
 
     @FXML
-    private void uploadList() throws IOException {
+    private void uploadList(ActionEvent event) {
         //Open upload window
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("FIleUploadPrompt.fxml")));
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Styles.css")).toExternalForm());
-        Stage stage = new Stage();
-        stage.setTitle("List upload prompt");
-        stage.setScene(scene);
-        stage.show();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FileUploadPrompt.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.setTitle("File Upload");
+            stage.show();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -81,6 +93,17 @@ public class MainWindowController {
     @FXML
     private void useListOfItemsAddBtn(){
         //Open prompt window
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemPrompt_ADD.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.setTitle("Add Item");
+            stage.show();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     //Display complete and incomplete based on boolean "show values"
@@ -98,13 +121,24 @@ public class MainWindowController {
     @FXML
     private void useListOfItemsEditBtn(){
         //Open prompt window
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemPrompt_EDIT.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.setTitle("Edit Item");
+            stage.show();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private Button listOfItemsRmvBtn;
 
     @FXML
-    private void uselistOfItemsRmvBtn(){
+    private void useListOfItemsRmvBtn(){
         //Remove item from arraylist
     }
 
@@ -112,8 +146,19 @@ public class MainWindowController {
     private Button listOfListAddBtn;
 
     @FXML
-    private void uselistOfListAddBtn(){
+    private void useListOfListAddBtn(){
         //Open prompt window
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ListPrompt_ADD.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.setTitle("Add List");
+            stage.show();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -122,6 +167,7 @@ public class MainWindowController {
     @FXML
     private void selectFromListOfList(){
         //Get data from the selected item in the list
+                //Save to ToDoItem array
     }
 
     @FXML
@@ -130,6 +176,17 @@ public class MainWindowController {
     @FXML
     private void useListOfListEditBtn(){
         //Open prompt window
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ListPrompt_EDIT.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.setTitle("Edit List");
+            stage.show();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

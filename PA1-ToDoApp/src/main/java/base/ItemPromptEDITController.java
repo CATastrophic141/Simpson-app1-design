@@ -1,27 +1,31 @@
 package base;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 
 public class ItemPromptEDITController {
     @FXML
-    private CheckBox IsCompleteBtn;
+    private Button itemPromptOkEDITBtn;
 
     @FXML
-    private TextField itemDateTextBoxD_EDIT;
+    private CheckBox isCompleteEDITBtn;
 
     @FXML
-    private TextField itemDateTextBoxM_EDIT;
+    private TextField itemDateTextBoxDEDIT;
 
     @FXML
-    private TextField itemDateTextBoxY_EDIT;
+    private TextField itemDateTextBoxMEDIT;
 
     @FXML
-    private TextField itemDetailsTextBox_EDIT;
+    private TextField itemDateTextBoxYEDIT;
 
     @FXML
-    private TextField itemNameTextBox_EDIT;
+    private TextField itemDetailsTextBoxEDIT;
+
+    @FXML
+    private TextField itemNameTextBoxEDIT;
 
     @FXML
     private void editItem(ToDoList listEntry, ToDoItem itemEntry){

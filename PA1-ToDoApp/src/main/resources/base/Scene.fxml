@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="base.MainWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="base.MainWindowController">
    <children>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -19,21 +19,21 @@
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="357.0" prefWidth="495.0">
                            <children>
-                              <Button id="ListOfListRmvBtn" fx:id="listOfListRmvBtn" layoutX="400.0" layoutY="260.0" mnemonicParsing="false" text="Remove" AnchorPane.topAnchor="260.0" />
-                              <Button id="ListOfListAddBtn" fx:id="listOfListAddBtn" layoutX="300.0" layoutY="260.0" mnemonicParsing="false" text="Add" AnchorPane.topAnchor="260.0" />
+                              <Button id="ListOfListRmvBtn" fx:id="listOfListRmvBtn" layoutX="400.0" layoutY="260.0" mnemonicParsing="false" onAction="#useListOfListRmvBtn" text="Remove" AnchorPane.topAnchor="260.0" />
+                              <Button id="ListOfListAddBtn" fx:id="listOfListAddBtn" layoutX="300.0" layoutY="260.0" mnemonicParsing="false" onAction="#useListOfListAddBtn" text="Add" AnchorPane.topAnchor="260.0" />
                               <Label layoutX="14.0" layoutY="5.0" text="To-do lists" />
-                              <Button id="ListOfListEditBtn" fx:id="listOfListEditBtn" layoutX="350.0" layoutY="260.0" mnemonicParsing="false" text="Edit" AnchorPane.topAnchor="260.0" />
+                              <Button id="ListOfListEditBtn" fx:id="listOfListEditBtn" layoutX="351.0" layoutY="260.0" mnemonicParsing="false" onAction="#useListOfListEditBtn" text="Edit" AnchorPane.topAnchor="260.0" />
                               <ListView fx:id="listOfListsList" layoutX="14.0" layoutY="22.0" prefHeight="287.0" prefWidth="260.0" />
-                              <Button fx:id="saveBtn" layoutX="417.0" layoutY="22.0" mnemonicParsing="false" text="Save" />
-                              <Button fx:id="uploadBtn" layoutX="417.0" layoutY="54.0" mnemonicParsing="false" text="Upload" />
+                              <Button fx:id="saveBtn" layoutX="417.0" layoutY="22.0" mnemonicParsing="false" onAction="#saveList" text="Save" />
+                              <Button fx:id="uploadBtn" layoutX="417.0" layoutY="54.0" mnemonicParsing="false" onAction="#uploadList" text="Upload" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                            <children>
-                              <Button id="ListOfItemsAddBtn" fx:id="listOfItemsAddBtn" layoutX="300.0" layoutY="260.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="38.0" text="Add" AnchorPane.topAnchor="259.0" />
-                              <Button id="ListOfItemsRmvBtn" fx:id="listOfItemsRmvBtn" layoutX="400.0" layoutY="260.0" mnemonicParsing="false" text="Remove" AnchorPane.topAnchor="259.0" />
+                              <Button id="ListOfItemsAddBtn" fx:id="listOfItemsAddBtn" layoutX="300.0" layoutY="260.0" mnemonicParsing="false" onAction="#useListOfItemsAddBtn" prefHeight="31.0" prefWidth="46.0" text="Add" AnchorPane.topAnchor="259.0" />
+                              <Button id="ListOfItemsRmvBtn" fx:id="listOfItemsRmvBtn" layoutX="400.0" layoutY="260.0" mnemonicParsing="false" onAction="#useListOfItemsRmvBtn" text="Remove" AnchorPane.topAnchor="259.0" />
                               <Label layoutX="14.0" layoutY="5.0" text="Things to do:" />
-                              <Button id="ListOfItemsEditBtn" fx:id="listOfItemsEditBtn" layoutX="350.0" layoutY="260.0" mnemonicParsing="false" text="Edit" AnchorPane.topAnchor="259.0" />
+                              <Button id="ListOfItemsEditBtn" fx:id="listOfItemsEditBtn" layoutX="351.0" layoutY="259.0" mnemonicParsing="false" onAction="#useListOfItemsEditBtn" text="Edit" AnchorPane.topAnchor="259.0" />
                               <CheckBox id="HideCompletedBtn" fx:id="hideCompletedBtn" layoutX="371.0" layoutY="34.0" mnemonicParsing="false" text="Hide Completed" />
                               <CheckBox id="HideIncompleteBtn" fx:id="hideIncompleteBtn" layoutX="371.0" layoutY="14.0" mnemonicParsing="false" text="Hide Incomplete" />
                               <ListView fx:id="listOfItemsList" layoutX="14.0" layoutY="22.0" prefHeight="290.0" prefWidth="268.0" />

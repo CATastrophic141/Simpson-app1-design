@@ -6,10 +6,10 @@ import javafx.scene.control.TextField;
 
 public class ListPromptEDITController {
     @FXML
-    private TextField listNameBoxEDIT;
+    private TextField listNameEDITBox;
 
     @FXML
-    private Button listNameOkBtnEDIT;
+    private Button listNameOkEDITBtn;
 
     @FXML
     private void editListName(ToDoList listEntry){
