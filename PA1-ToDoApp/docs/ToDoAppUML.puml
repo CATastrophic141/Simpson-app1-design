@@ -30,6 +30,7 @@ Application -- ToDoList
 
 class Application {
   # ArrayList<ToDoList> listList
+  # ToDoItem listItem
   # boolean showCompleted
   # boolean showIncomplete
 --
@@ -64,52 +65,58 @@ class MainWindowController {
         - void setHideCompletedBtn()
         - void setHideIncompleteBtnBtn()
         - void setItemNameText()
-        - void useListOfItemsAddBtn()
         - void selectFromListOfItems()
+        - void useListOfItemsAddBtn()
         - void useListOfItemsEditBtn()
-        - void uselistOfItemsRmvBtn()
-        - void uselistOfListAddBtn()
+        - void useListOfItemsRmvBtn()
         - void selectFromListOfList()
         - void useListOfListEditBtn()
         - void useListOfListRmvBtn()
+        - void useListOfListAddBtn()
 }
 Application -- MainWindowController
 
-class ListPrompt_ADD_Controller {
+class ListPromptADDController {
     @FXML items
-      - TextField listNameBox_ADD;
-      - Button listNameOkBtn_ADD;
+       - Button itemPromptOkADDBtn;
+       - TextField itemDateTextBoxDADD;
+       - TextField itemDateTextBoxMADD;
+       - TextField itemDateTextBoxYADD;
+       - TextField itemDetailsTextBoxADD;
+       - TextField itemNameTextBoxADD;
 --
     @FXML actions
       - void createList()
 }
-mainWindowController -- ListPrompt_ADD_Controller
+MainWindowController -- ListPromptADDController
 
-class ListPrompt_EDIT_Controller {
+class ListPromptEDITController {
     @FXML items
-      - TextField listNameBox_EDIT;
-      - Button listNameOkBtn_EDIT;
+      - TextField listNameEDITBox;
+      - Button listNameEDITOkBtn;
 --
     @FXML actions
       - void editListName(ToDoList listEntry)
 }
-mainWindowController -- ListPrompt_EDIT_Controller
+MainWindowController -- ListPromptEDITController
 
-class ItemPrompt_ADD_Controller {
+class ItemPromptADDController {
     @FXML items
-      - TextField itemDateTextBoxD_ADD;
-      - TextField itemDateTextBoxM_ADD;
-      - TextField itemDateTextBoxY_ADD;
-      - TextField itemDetailsTextBox_ADD;
-      - TextField itemNameTextBox_ADD;
+      - Button itemPromptOkADDBtn;
+      - TextField itemDateTextBoxDADD;
+      - TextField itemDateTextBoxMADD;
+      - TextField itemDateTextBoxYADD;
+      - TextField itemDetailsTextBoxADD;
+      - TextField itemNameTextBoxADD;
 --
     @FXML actions
       - void createItem(ToDoList listEntry)
 }
-mainWindowController -- ItemPrompt_ADD_Controller
+MainWindowController -- ItemPromptADDController
 
-class ItemPrompt_EDIT_Controller {
+class ItemPromptEDITController {
     @FXML items
+      - Button itemPromptOkEDITBtn;
       - CheckBox IsCompleteBtn;
       - TextField itemDateTextBoxD_EDIT;
       - TextField itemDateTextBoxM_EDIT;
@@ -120,7 +127,7 @@ class ItemPrompt_EDIT_Controller {
     @FXML actions
       - void editItem(ToDoList listEntry, ToDoItem itemEntry)
 }
-mainWindowController -- ItemPrompt_EDIT_Controller
+MainWindowController -- ItemPromptEDITController
 
 class SavePromptController {
     @FXML items
@@ -132,7 +139,7 @@ class SavePromptController {
     @FXML actions
       - void saveList()
 }
-mainWindowController -- SavePromptController
+MainWindowController -- SavePromptController
 
 class UploadPromptController {
     @FXML items
@@ -143,5 +150,5 @@ class UploadPromptController {
       - void uploadList()
 }
 
-mainWindowController -- UploadPromptController
+MainWindowController -- UploadPromptController
 @enduml

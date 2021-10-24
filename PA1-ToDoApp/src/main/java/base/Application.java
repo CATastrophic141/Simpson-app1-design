@@ -19,7 +19,8 @@ public class Application extends javafx.application.Application {
     //Arraylist of to do lists
             //Each list item contains an arraylist of to do items
     ArrayList<ToDoList> listList;
-    ArrayList<ToDoItem> listItem;
+    //ToDoItem variable for storage
+    ToDoItem listItem;
     boolean showCompleted;
     boolean showIncomplete;
 
