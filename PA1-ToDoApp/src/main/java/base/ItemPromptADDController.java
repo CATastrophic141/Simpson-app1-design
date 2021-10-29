@@ -2,7 +2,6 @@ package base;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 public class ItemPromptADDController {
@@ -10,7 +9,13 @@ public class ItemPromptADDController {
     private Button itemPromptOkADDBtn;
 
     @FXML
-    private DatePicker itemDateBoxADD;
+    private TextField itemDateTextBoxDADD;
+
+    @FXML
+    private TextField itemDateTextBoxMADD;
+
+    @FXML
+    private TextField itemDateTextBoxYADD;
 
     @FXML
     private TextField itemDetailsTextBoxADD;
@@ -19,7 +24,7 @@ public class ItemPromptADDController {
     private TextField itemNameTextBoxADD;
 
     @FXML
-    private void createItem(){
+    private void createItem(ToDoList listEntry){
         //On "ok" button press, retrieve strings from the fields and check boolean value
         String nameEntry = "";
         String dateEntry = "";

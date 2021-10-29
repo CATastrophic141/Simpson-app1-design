@@ -1,6 +1,5 @@
 package base;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,13 +8,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-
 public class MainWindowController {
-    //ToDoItem variable for storage
-    ToDoItem listItem;
-    boolean showCompleted;
-    boolean showIncomplete;
+
+    /*All present active code is to allow
+     the sub-windows to be accessed in this pseudocode stage*/
 
     @FXML
     private Button saveBtn;
@@ -59,9 +55,8 @@ public class MainWindowController {
     private Label dateText;
 
     @FXML
-    private void setDateText() {
+    private void setDateText(){
         //Set the label's text as the date of from the to-do item's information package
-        dateText.setText(listItem.getDueDate());
     }
 
     @FXML
@@ -70,16 +65,6 @@ public class MainWindowController {
     @FXML
     private void setDetailText(){
         //Set the label's text as the date of from the to-do item's information package
-        detailText.setText(listItem.getItemDetails());
-    }
-
-    @FXML
-    private Label nameText;
-
-    @FXML
-    private void setItemNameText(){
-        //Set the label's text to the name of the item
-        nameText.setText(listItem.getItemName());
     }
 
     @FXML
@@ -88,7 +73,6 @@ public class MainWindowController {
     @FXML
     private void setHideCompletedBtn(){
         //Set the showCompleted boolean to false
-        showCompleted = !showCompleted;
     }
 
     @FXML
@@ -97,7 +81,14 @@ public class MainWindowController {
     @FXML
     private void setHideIncompleteBtnBtn(){
         //Set the showIncomplete boolean to false
-        showIncomplete = !showIncomplete;
+    }
+
+    @FXML
+    private Label itemNameText;
+
+    @FXML
+    private void setItemNameText(){
+        //Set the label's text to the name of the item
     }
 
     @FXML
@@ -121,16 +112,11 @@ public class MainWindowController {
 
     //Display complete and incomplete based on boolean "show values"
     @FXML
-    private ListView<ToDoItem> listOfItemsList;
-
-    @FXML
-    private Button selectItemButton;
+    private ListView<?> listOfListsList;
 
     @FXML
     private void selectFromListOfItems(){
         //Get data from the selected item in list
-        ObservableList<ToDoItem> item = listOfItemsList.getSelectionModel().getSelectedItems();
-        listItem = (ToDoItem) item;
     }
 
     @FXML
@@ -156,12 +142,62 @@ public class MainWindowController {
     private Button listOfItemsRmvBtn;
 
     @FXML
-    private void useListOfItemsRmvBtn(ActionEvent event) {
+    private void useListOfItemsRmvBtn(){
         //Remove item from arraylist
-        if (listOfItemsList.getSelectionModel().getSelectedIndex() != -1) {
-            int itemIndex = listOfItemsList.getSelectionModel().getSelectedIndex();
-            listOfItemsList.getItems().remove(itemIndex);
+    }
+
+    @FXML
+    private Button listOfListAddBtn;
+
+    @FXML
+    private void useListOfListAddBtn(){
+        //Open prompt window
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ListPrompt_ADD.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.setTitle("Add List");
+            stage.show();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
         }
     }
 
+    @FXML
+    private ListView<?> listOfItemsList;
+
+    @FXML
+    private void selectFromListOfList(){
+        //Get data from the selected item in the list
+                //Save to ToDoItem array
+    }
+
+    @FXML
+    private Button listOfListEditBtn;
+
+    @FXML
+    private void useListOfListEditBtn(){
+        //Open prompt window
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ListPrompt_EDIT.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root1));
+            stage.setTitle("Edit List");
+            stage.show();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private Button listOfListRmvBtn;
+
+    @FXML
+    private void useListOfListRmvBtn(){
+        //Remove array list
+    }
 }

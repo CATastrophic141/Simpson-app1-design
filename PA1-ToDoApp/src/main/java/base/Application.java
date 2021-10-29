@@ -15,6 +15,15 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Application extends javafx.application.Application {
+
+    //Arraylist of to do lists
+            //Each list item contains an arraylist of to do items
+    ArrayList<ToDoList> listList;
+    //ToDoItem variable for storage
+    ToDoItem listItem;
+    boolean showCompleted;
+    boolean showIncomplete;
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Scene.fxml")));

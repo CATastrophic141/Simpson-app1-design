@@ -44,3 +44,16 @@ class ToDoItem {
     }
 }
 
+class ToDoList{
+    private String listName;
+    ArrayList<ToDoItem> itemList;
+
+    public void setListName(String name){
+        //Set listName as passed string
+    }
+
+    public String getListName(){
+        //get list name
+        return listName;
+    }
+}
